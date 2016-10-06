@@ -33,7 +33,7 @@ public class PerfilService {
 			Perfil perfil = perfilDAO.getById(id_perfil);
 			if (perfil == null){
 				exceptionNumber = 404;
-				throw new Exception("No perfil with this id");
+				throw new Exception("Não há perfil com este id");
 			}
 			return perfil;
 		} catch (Exception e){
@@ -56,8 +56,6 @@ public class PerfilService {
 			throw new WebApplicationException(exceptionNumber);
 		}
 	}
-	
-	
 	
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)

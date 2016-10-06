@@ -3,9 +3,9 @@ package br.com.pojos;
 public enum TipoMidia {
 	
 	AUDIO("Audio"),
-	FIGURA("Figure"),
+	FIGURA("Figura"),
 	VIDEO("Video"),
-	PERSONAGEM("Character");
+	PERSONAGEM("Personagem");
 	
 	private String code;
 	

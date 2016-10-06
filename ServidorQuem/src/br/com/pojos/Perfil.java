@@ -18,6 +18,7 @@ import javax.persistence.OneToOne;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -31,14 +32,15 @@ public class Perfil implements Serializable {
 	@Column(length = 15)
 	private String nomePerfil;
 	
-	@ManyToOne(targetEntity = Responsavel.class, fetch = FetchType.LAZY, cascade = {CascadeType.REFRESH})
+	@XmlTransient
+	@ManyToOne(targetEntity = Responsavel.class, fetch = FetchType.EAGER, cascade = {CascadeType.REFRESH})
 	@JoinColumn(name = "id_responsavel")
 	private Responsavel responsavel;
 	
-	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, targetEntity = Selo.class)
+	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, targetEntity = Selo.class)
 	private List<Selo> selos = new ArrayList<Selo>();
 	
-	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, targetEntity = UsuarioMiniJogo.class)
+	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, targetEntity = UsuarioMiniJogo.class)
 	private List<UsuarioMiniJogo> usuariosMiniJogos = new ArrayList<UsuarioMiniJogo>();
 	
 	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
