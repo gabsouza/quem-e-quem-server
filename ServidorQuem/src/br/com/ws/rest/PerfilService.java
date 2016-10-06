@@ -18,6 +18,7 @@ import br.com.daos.PerfilDAO;
 import br.com.daos.SimpleEntityManager;
 import br.com.pojos.Perfil;
 
+@Path("/perfil")
 public class PerfilService {
 
 	SimpleEntityManager sem = SimpleEntityManager.getInstance();

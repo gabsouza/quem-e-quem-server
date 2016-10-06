@@ -22,7 +22,7 @@ public class SimpleEntityManager {
     
     private SimpleEntityManager(){
     	if (instance == null) {
-    		emf = Persistence.createEntityManagerFactory("Rest2016");
+    		emf = Persistence.createEntityManagerFactory("ServidorQuem");
     		this.em = emf.createEntityManager();
     	}
     }
