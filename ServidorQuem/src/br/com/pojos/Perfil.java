@@ -37,12 +37,15 @@ public class Perfil implements Serializable {
 	@JoinColumn(name = "id_responsavel")
 	private Responsavel responsavel;
 	
+	@XmlTransient
 	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, targetEntity = Selo.class)
 	private List<Selo> selos = new ArrayList<Selo>();
 	
+	@XmlTransient
 	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, targetEntity = UsuarioMiniJogo.class)
 	private List<UsuarioMiniJogo> usuariosMiniJogos = new ArrayList<UsuarioMiniJogo>();
 	
+	@XmlTransient
 	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "id_midia")
 	private Midia midia;

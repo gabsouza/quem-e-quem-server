@@ -22,10 +22,13 @@ public class Midia implements Serializable {
 
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idMidia;
+	
 	@Enumerated(EnumType.STRING)
 	private TipoMidia tipoMidia;  
+	
 	@Column(nullable = false)
 	private String caminho;
+	
 	@Column(length = 255)
 	private String descricao;
 	
