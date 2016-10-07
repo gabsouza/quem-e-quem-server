@@ -2,8 +2,8 @@ package br.com.pojos;
 
 public enum StatusAlternativa {
 	
-	ERRADA("Wrong"),
-	CORRETA("Correct");
+	ERRADA("Errada"),
+	CORRETA("Correta");
 	
 	private String code;
 	
