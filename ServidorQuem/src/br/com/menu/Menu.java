@@ -11,10 +11,13 @@ public class Menu {
 
 	AlternativaDAO alternativaDAO = new AlternativaDAO(sem.getEntityManager());{
 
-	try
-	{
+	try{
+		
 		sem.beginTransaction();
-
+		Integer qtdProfissoes = alternativaDAO.consultaQuantidadeProfissoes();
+		
+		if(qtdProfissoes != 0){
+		
 		// Inserir
 
 		// Árbitra
@@ -362,7 +365,7 @@ public class Menu {
 		alternativa86.setDescricao("Estilista");
 
 		sem.commit();
-
+		}
 	}catch(
 	Exception e)
 	{
@@ -371,4 +374,5 @@ public class Menu {
 	{
 		sem.close();
 	}
-}}
+}
+}
