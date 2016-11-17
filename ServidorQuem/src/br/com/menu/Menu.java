@@ -70,11 +70,11 @@ public class Menu {
 
 		// Prisidenta
 		Alternativa alternativa13 = new Alternativa();
-		alternativa13.setDescricao("Prisidenta");
+		alternativa13.setDescricao("Político");
 
 		// Presidente
 		Alternativa alternativa14 = new Alternativa();
-		alternativa14.setDescricao("Presidente");
+		alternativa14.setDescricao("Político");
 
 		// Nutricionista
 		Alternativa alternativa15 = new Alternativa();
