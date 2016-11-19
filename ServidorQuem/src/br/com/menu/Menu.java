@@ -11,21 +11,6 @@ public class Menu {
 
 	SimpleEntityManager sem = SimpleEntityManager.getInstance();
 
-	/*DicaDAO dicaDAO = new DicaDAO(sem.getEntityManager());{
-		
-		try{
-			Dica dica1 = new Dica();
-			dica1.setMidia("");
-		} Exception e)
-	{
-		System.out.println("Ocorreu um erro: " + e.getMessage());
-	}finally
-	{
-		sem.close();
-	}		
-		
-	}*/
-	
 	
 	AlternativaDAO alternativaDAO = new AlternativaDAO(sem.getEntityManager());{
 
