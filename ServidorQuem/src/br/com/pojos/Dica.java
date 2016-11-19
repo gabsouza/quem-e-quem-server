@@ -33,7 +33,6 @@ public class Dica implements Serializable{
 	@JoinColumn(name = "id_pergunta")
 	private Pergunta pergunta;
 	
-	// Dois construtores sem nada?
 
 	public Dica(){
 		

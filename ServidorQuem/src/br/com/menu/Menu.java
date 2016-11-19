@@ -1,20 +1,38 @@
 package br.com.menu;
 
 import br.com.daos.AlternativaDAO;
+import br.com.daos.DicaDAO;
 import br.com.daos.SimpleEntityManager;
 
 import br.com.pojos.Alternativa;
+import br.com.pojos.Dica;
 
 public class Menu {
 
 	SimpleEntityManager sem = SimpleEntityManager.getInstance();
 
+	/*DicaDAO dicaDAO = new DicaDAO(sem.getEntityManager());{
+		
+		try{
+			Dica dica1 = new Dica();
+			dica1.setMidia("");
+		} Exception e)
+	{
+		System.out.println("Ocorreu um erro: " + e.getMessage());
+	}finally
+	{
+		sem.close();
+	}		
+		
+	}*/
+	
+	
 	AlternativaDAO alternativaDAO = new AlternativaDAO(sem.getEntityManager());{
 
 	try{
 		
 		sem.beginTransaction();
-		Integer qtdProfissoes = alternativaDAO.consultaQuantidadeProfissoes();
+		Integer qtdProfissoes = alternativaDAO.consultaQuantidadeProfissoes();		
 		
 		if(qtdProfissoes != 0){
 		
