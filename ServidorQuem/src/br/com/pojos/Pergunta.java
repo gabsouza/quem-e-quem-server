@@ -28,7 +28,7 @@ public class Pergunta implements Serializable{
 	private int idPergunta;
 	@Column(nullable = false)
 	private int quantTentativas;
-	@Column(nullable = false)
+	//@Column(nullable = false)
 	private String descricao;
 	
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, targetEntity = Midia.class)

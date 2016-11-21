@@ -53,7 +53,6 @@ public class Inserir {
 			d1.setMidia(m1);
 			dicaDAO.save(d1);
 			
-			
 //			// Contato cliente 1
 //			Contato c11 = new Contato();
 //			c11.setInfo("1234-0565");

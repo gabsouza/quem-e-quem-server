@@ -2,7 +2,6 @@ package br.com.appservidorquem;
 
 import java.util.List;
 
-import br.com.appservidorquem.Inserir;
 import br.com.daos.AlternativaDAO;
 import br.com.daos.DicaDAO;
 import br.com.daos.MidiaDAO;
@@ -13,6 +12,7 @@ import br.com.daos.RespostaDAO;
 import br.com.daos.SeloDAO;
 import br.com.daos.SimpleEntityManager;
 import br.com.daos.UsuarioMiniJogoDAO;
+import br.com.menu.Inserir;
 
 public class Menu {
 
