@@ -385,7 +385,7 @@ public class Inserir {
 				
 				//Pergunta 1
 				Pergunta p1 = new Pergunta();
-				p1.setDescricao("Eu adoro trabalhar com plantas");
+				p1.setDescricao("Eu adoro trabalhar com plantas, quem eu sou?");
 				//Como no pojo da PERGUNTA o quantTentativas está nullable = false (ou seja, não pode ser nulo)
 				//eu pus um valor só pra não dar erro na hora de mandarmos inserir
 				p1.setQuantTentativas(3);
