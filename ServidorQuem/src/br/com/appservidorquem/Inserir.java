@@ -32,11 +32,19 @@ public class Inserir {
 			try{
 				s.beginTransaction();
 				
-			// Midia 1
+			//Pergunta 1
+			Pergunta p1 = new Pergunta();
+			p1.setDescricao("Eu adoro trabalhar com plantas");
+			//Como no pojo da PERGUNTA o quantTentativas está nullable = false (ou seja, não pode ser nulo)
+			//eu pus um valor só pra não dar erro na hora de mandarmos inserir
+			p1.setQuantTentativas(3);
+			perguntaDAO.save(p1);
+			
+			// Midia 1 da dica 1
 			Midia m1 = new Midia();
 			m1.setCaminho("lalala");
-			m1.setDescricao(" Eu adoro trabalhar com plantas" );
-			m1.setTipoMidia(TipoMidia.AUDIO);
+			m1.setDescricao("imagem sobre agricultor" );
+			m1.setTipoMidia(TipoMidia.FIGURA);
 			midiaDAO.save(m1);
 			
 			//Dica 1
@@ -44,6 +52,7 @@ public class Inserir {
 			m1 = (Midia)midiaDAO.getById(1);
 			d1.setMidia(m1);
 			dicaDAO.save(d1);
+			
 			
 //			// Contato cliente 1
 //			Contato c11 = new Contato();
