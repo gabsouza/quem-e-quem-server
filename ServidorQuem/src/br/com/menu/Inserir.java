@@ -1,11 +1,5 @@
 package br.com.menu;
 
-import java.util.Date;
-
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-
 import br.com.daos.AlternativaDAO;
 import br.com.daos.DicaDAO;
 import br.com.daos.MidiaDAO;
@@ -37,7 +31,8 @@ public class Inserir {
 				
 				if(qtdProfissoes != 0){
 				}
-				// Inserir
+				
+				// Profissões
 
 				// Árbitra
 				Alternativa alternativa1 = new Alternativa();
@@ -383,27 +378,211 @@ public class Inserir {
 				Alternativa alternativa86 = new Alternativa();
 				alternativa86.setDescricao("Estilista");
 				
-				//Pergunta 1
-				Pergunta p1 = new Pergunta();
-				p1.setDescricao("Eu adoro trabalhar com plantas, quem eu sou?");
-				//Como no pojo da PERGUNTA o quantTentativas está nullable = false (ou seja, não pode ser nulo)
-				//eu pus um valor só pra não dar erro na hora de mandarmos inserir
-				p1.setQuantTentativas(3);
-				perguntaDAO.save(p1);
 				
-				// Midia 1 da dica 1
-				Midia m1 = new Midia();
-				m1.setCaminho("lalala");
-				m1.setDescricao("imagem sobre agricultor" );
-				m1.setTipoMidia(TipoMidia.FIGURA);
-				midiaDAO.save(m1);
 				
-				//Dica 1
-				Dica d1 = new Dica();
-				m1 = (Midia)midiaDAO.getById(1);
-				d1.setMidia(m1);
-				dicaDAO.save(d1);
 				
+				//Perguntas
+				
+				//Agricultor(a)
+				Pergunta pergunta1 = new Pergunta();
+				pergunta1.setDescricao("Eu adoro cuidar da terra, quem eu sou?");
+				pergunta1.setQuantTentativas(3);
+				perguntaDAO.save(pergunta1);
+				
+				//Floriculturista
+				Pergunta pergunta2 = new Pergunta();
+				pergunta2.setDescricao("Eu adoro trabalhar com plantas, quem eu sou?");
+				pergunta2.setQuantTentativas(3);
+				perguntaDAO.save(pergunta2);
+				
+				//Política(o)
+				Pergunta pergunta3 = new Pergunta();
+				pergunta3.setDescricao("Sou responsável por defender os interesses da população, quem eu sou?");
+				pergunta3.setQuantTentativas(3);
+				perguntaDAO.save(pergunta3);
+				
+				//Arquiteto(a)
+				Pergunta pergunta4 = new Pergunta();
+				pergunta4.setDescricao("Eu gosto de planejar casas e prédios, quem eu sou?");
+				pergunta4.setQuantTentativas(3);
+				perguntaDAO.save(pergunta4);
+				
+				//Babá
+				Pergunta pergunta5 = new Pergunta();
+				pergunta5.setDescricao("Eu gosto muito de trabalhar com crianças, quem eu sou?");
+				pergunta5.setQuantTentativas(3);
+				perguntaDAO.save(pergunta5);
+				
+				//Entregadora(o)
+				Pergunta pergunta6 = new Pergunta();
+				pergunta6.setDescricao("Meu dever é fazer com que as pessoas recebam suas encomendas, quem eu sou?");
+				pergunta6.setQuantTentativas(3);
+				perguntaDAO.save(pergunta6);
+				
+				//Cientista
+				Pergunta pergunta7 = new Pergunta();
+				pergunta7.setDescricao("Eu adoro pesquisar e descobrir coisas novas, quem eu sou?");
+				pergunta7.setQuantTentativas(3);
+				perguntaDAO.save(pergunta7);
+				
+				//Piloto/Pilota
+				Pergunta pergunta8 = new Pergunta();
+				pergunta8.setDescricao("Eu gosto de velocidade e de adrenalina, quem eu sou?");
+				pergunta8.setQuantTentativas(3);
+				perguntaDAO.save(pergunta8);
+				
+				//Manicure
+				Pergunta pergunta9 = new Pergunta();
+				pergunta9.setDescricao("Eu gosto de cuidar das unhas das pessoas, quem eu sou?");
+				pergunta9.setQuantTentativas(3);
+				perguntaDAO.save(pergunta9);
+				
+				//Policial 
+				Pergunta pergunta10 = new Pergunta();
+				pergunta10.setDescricao("Meu dever é defender a cidade, quem eu sou?");
+				pergunta10.setQuantTentativas(3);
+				perguntaDAO.save(pergunta10);
+				
+				
+				
+				//Midias
+				
+				
+				// Midia imagem agricultor(a)
+				Midia midia1 = new Midia();
+				midia1.setCaminho("lalala");
+				midia1.setDescricao("Dica em imagem agricultor" );
+				midia1.setTipoMidia(TipoMidia.FIGURA);
+				midiaDAO.save(midia1);
+				
+				//Midia imagem Floriculturista
+				Midia midia2 = new Midia();
+				midia2.setCaminho("lalala");
+				midia2.setDescricao("Dica em imagem Floriculturista" );
+				midia2.setTipoMidia(TipoMidia.FIGURA);
+				midiaDAO.save(midia2);
+				
+				//Midia imagem política(o)
+				Midia midia3 = new Midia();
+				midia3.setCaminho("lalala");
+				midia3.setDescricao("Dica em imagem política(o)" );
+				midia3.setTipoMidia(TipoMidia.FIGURA);
+				midiaDAO.save(midia3);
+				
+				//Midia imagem arquiteta(o)
+				Midia midia4 = new Midia();
+				midia4.setCaminho("lalala");
+				midia4.setDescricao("Dica em imagem arquiteta(o)" );
+				midia4.setTipoMidia(TipoMidia.FIGURA);
+				midiaDAO.save(midia4);
+				
+				//Midia imagem babá
+				Midia midia5 = new Midia();
+				midia5.setCaminho("lalala");
+				midia5.setDescricao("Dica em imagem babá" );
+				midia5.setTipoMidia(TipoMidia.FIGURA);
+				midiaDAO.save(midia5);
+				
+				//Midia imagem entregador(a)
+				Midia midia6 = new Midia();
+				midia6.setCaminho("lalala");
+				midia6.setDescricao("Dica em imagem entregador(a)" );
+				midia6.setTipoMidia(TipoMidia.FIGURA);
+				midiaDAO.save(midia6);
+				
+				//Midia imagem cientista
+				Midia midia7 = new Midia();
+				midia7.setCaminho("lalala");
+				midia7.setDescricao("Dica em imagem cientista" );
+				midia7.setTipoMidia(TipoMidia.FIGURA);
+				midiaDAO.save(midia7);
+				
+				//Midia imagem pilota(o)
+				Midia midia8 = new Midia();
+				midia8.setCaminho("lalala");
+				midia8.setDescricao("Dica em imagem pilota(o)" );
+				midia8.setTipoMidia(TipoMidia.FIGURA);
+				midiaDAO.save(midia8);
+				
+				//Midia imagem manicure
+				Midia midia9 = new Midia();
+				midia9.setCaminho("lalala");
+				midia9.setDescricao("Dica em imagem manicure" );
+				midia9.setTipoMidia(TipoMidia.FIGURA);
+				midiaDAO.save(midia9);
+				
+				//Midia imagem policial
+				Midia midia10 = new Midia();
+				midia10.setCaminho("lalala");
+				midia10.setDescricao("Dica em imagem policial" );
+				midia10.setTipoMidia(TipoMidia.FIGURA);
+				midiaDAO.save(midia10);
+				
+				
+				
+				
+				//Dicas
+				
+				
+				//Dica Agricultor
+				Dica dica1 = new Dica();
+				midia1 = (Midia)midiaDAO.getById(1);
+				dica1.setMidia(midia1);
+				dicaDAO.save(dica1);
+				
+				//Dica Floriculturista
+				Dica dica2 = new Dica();
+				midia2 = (Midia)midiaDAO.getById(1);
+				dica2.setMidia(midia2);
+				dicaDAO.save(dica2);
+
+				//Dica política(o)
+				Dica dica3 = new Dica();
+				midia3 = (Midia)midiaDAO.getById(1);
+				dica3.setMidia(midia3);
+				dicaDAO.save(dica3);
+				
+				//Dica arquiteta(o)
+				Dica dica4 = new Dica();
+				midia4 = (Midia)midiaDAO.getById(1);
+				dica4.setMidia(midia4);
+				dicaDAO.save(dica4);
+				
+				//Dica babá
+				Dica dica5 = new Dica();
+				midia5 = (Midia)midiaDAO.getById(1);
+				dica5.setMidia(midia5);
+				dicaDAO.save(dica5);
+				
+				//Dica entregador(a)
+				Dica dica6 = new Dica();
+				midia6 = (Midia)midiaDAO.getById(1);
+				dica6.setMidia(midia6);
+				dicaDAO.save(dica6);
+				
+				//Dica cientista
+				Dica dica7 = new Dica();
+				midia7 = (Midia)midiaDAO.getById(1);
+				dica7.setMidia(midia7);
+				dicaDAO.save(dica7);
+				
+				//Dica pilota(o)
+				Dica dica8 = new Dica();
+				midia8 = (Midia)midiaDAO.getById(1);
+				dica8.setMidia(midia8);
+				dicaDAO.save(dica8);
+				
+				//Dica manicure
+				Dica dica9 = new Dica();
+				midia9 = (Midia)midiaDAO.getById(1);
+				dica9.setMidia(midia9);
+				dicaDAO.save(dica1);
+				
+				//Dica policial
+				Dica dica10 = new Dica();
+				midia10 = (Midia)midiaDAO.getById(1);
+				dica10.setMidia(midia10);
+				dicaDAO.save(dica10);
 				
 				s.commit();
 				
