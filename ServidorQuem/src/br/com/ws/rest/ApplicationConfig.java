@@ -34,7 +34,7 @@ public class ApplicationConfig extends Application {
 		resources.add(PerfilService.class);
 		resources.add(Pergunta.class);
 		resources.add(RelatorioService.class);
-		resources.add(Responsavel.class);
+		resources.add(ResponsavelService.class);
 		resources.add(Resposta.class);
 		resources.add(SeloService.class);
 		resources.add(UsuarioMiniJogoService.class);
