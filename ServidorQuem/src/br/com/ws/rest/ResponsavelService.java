@@ -64,9 +64,9 @@ public class ResponsavelService {
 	public Response cadastrar(Responsavel responsavel){
 		try{
 			sem.getEntityManager().getTransaction().begin();
-			responsavelDAO.save(responsavel);
+			responsavel = responsavelDAO.save(responsavel);
 			sem.getEntityManager().getTransaction().commit();
-			return Response.status(200).entity("Responsavel cadastrado com sucesso").build();
+			return Response.status(200).entity(responsavel).build();
 		} catch (Exception e){
 			throw new WebApplicationException(500);
 		}
