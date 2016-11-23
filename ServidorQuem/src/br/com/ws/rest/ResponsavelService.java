@@ -68,6 +68,7 @@ public class ResponsavelService {
 			sem.getEntityManager().getTransaction().commit();
 			return Response.status(200).entity(responsavel).build();
 		} catch (Exception e){
+			e.printStackTrace();
 			throw new WebApplicationException(500);
 		}
 	}

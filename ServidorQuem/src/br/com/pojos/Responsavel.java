@@ -25,7 +25,7 @@ public class Responsavel implements Serializable{
 
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idResponsavel;
-	@Column(length = 15)
+	@Column(length = 50)
 	private String nomeResponsavel;
 	@Column(nullable = false, length = 200) // Botar limite?
 	private String emailResponsavel;
