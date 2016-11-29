@@ -57,4 +57,58 @@ public class PerguntaService {
 		}
 	}
 	
+	@POST
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Response cadastrar(Pergunta pergunta){
+		try{
+			sem.getEntityManager().getTransaction().begin();
+			perguntaDAO.save(pergunta);
+			sem.getEntityManager().getTransaction().commit();
+			return Response.status(200).entity("Pergunta cadastrada com sucesso").build();
+		} catch (Exception e){
+			throw new WebApplicationException(500);
+		}
+	}
+	
+	@PUT
+	@Path("/{idPergunta}")
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Response atualizar(@PathParam("id") int id, Pergunta pergunta){
+		int exceptionNumber = 500;
+		try{
+			Pergunta perguntaput = perguntaDAO.getById(id);
+			if(perguntaput == null){
+				exceptionNumber = 404;
+				throw new Exception("No pergunta with this id");
+			} else {
+				sem.getEntityManager().getTransaction().begin();
+				pergunta.setIdPergunta(id);
+				perguntaDAO.save(pergunta);
+				sem.getEntityManager().getTransaction().commit();
+				return Response.status(200).entity("Pergunta alterada com sucesso").build();
+			}
+		} catch (Exception e){
+			throw new WebApplicationException(exceptionNumber);
+		}
+	}
+	
+	@DELETE
+	@Path("/{idPergunta}")
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Response deletar(@PathParam("idPergunta") int id_pergunta){
+		int exceptionNumber = 500;
+		try{
+			Pergunta pergunta = perguntaDAO.getById(id_pergunta);
+			if(pergunta == null){
+				exceptionNumber = 404;
+				throw new Exception("No pergunta with this id");
+			}
+			sem.getEntityManager().getTransaction().begin();
+			perguntaDAO.delete(pergunta);
+			sem.getEntityManager().getTransaction().commit();
+			return Response.status(200).entity("Pergunta excluída com sucesso").build();
+		} catch (Exception e){
+			throw new WebApplicationException(exceptionNumber);
+		}
+	}
 }
