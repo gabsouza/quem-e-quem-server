@@ -10,8 +10,6 @@ import br.com.daos.RespostaDAO;
 import br.com.daos.SeloDAO;
 import br.com.daos.SimpleEntityManager;
 import br.com.daos.UsuarioMiniJogoDAO;
-import br.com.pojos.Alternativa;
-import br.com.pojos.Dica;
 
 public class Menu {
 
