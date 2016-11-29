@@ -57,7 +57,6 @@ public class PerguntaService {
 		}
 	}
 	
-	
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response cadastrar(Pergunta pergunta){
