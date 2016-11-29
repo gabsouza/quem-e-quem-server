@@ -18,7 +18,7 @@ import br.com.daos.PerguntaDAO;
 import br.com.daos.SimpleEntityManager;
 import br.com.pojos.Pergunta;
 
-@Path("/pergunta")
+@Path("pergunta")
 public class PerguntaService {
 
 	SimpleEntityManager sem = SimpleEntityManager.getInstance();
