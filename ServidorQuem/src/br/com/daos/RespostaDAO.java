@@ -6,7 +6,6 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
-import br.com.pojos.Pergunta;
 import br.com.pojos.Resposta;
 
 public class RespostaDAO extends GenericDAO<Integer, Resposta>{
