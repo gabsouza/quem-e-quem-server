@@ -18,7 +18,7 @@ import br.com.daos.ResponsavelDAO;
 import br.com.daos.SimpleEntityManager;
 import br.com.pojos.Responsavel;
 
-@Path("responsavel")
+@Path("/responsavel")
 public class ResponsavelService {
 
 	SimpleEntityManager sem = SimpleEntityManager.getInstance();
