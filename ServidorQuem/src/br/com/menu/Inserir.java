@@ -13,6 +13,7 @@ import br.com.daos.UsuarioMiniJogoDAO;
 import br.com.pojos.Alternativa;
 import br.com.pojos.Dica;
 import br.com.pojos.Midia;
+import br.com.pojos.MiniJogo;
 import br.com.pojos.Pergunta;
 import br.com.pojos.StatusAlternativa;
 import br.com.pojos.TipoMidia;
@@ -32,6 +33,15 @@ public class Inserir {
 				
 				if(qtdProfissoes != 0){
 				}
+				
+				//Mini Jogos
+				MiniJogo miniJogo1 = new MiniJogo();
+				miniJogo1.setIntroducao("Relacionar os personagens com as profissões");
+				miniJogo1.setNomeMiniJogo("Profissão");
+				
+				MiniJogo miniJogo2 = new MiniJogo();
+				miniJogo2.setIntroducao("Relacionar os personagens com as fantasias");
+				miniJogo2.setNomeMiniJogo("Fantasias");
 				
 				// Profissões
 
@@ -559,60 +569,70 @@ public class Inserir {
 				Pergunta pergunta1 = new Pergunta();
 				pergunta1.setDescricao("Eu adoro cuidar da terra, quem eu sou?");
 				pergunta1.setQuantTentativas(3);
+				pergunta1.setMiniJogo(miniJogo1);
 				perguntaDAO.save(pergunta1);
 				
 				//Floriculturista
 				Pergunta pergunta2 = new Pergunta();
 				pergunta2.setDescricao("Eu adoro trabalhar com plantas, quem eu sou?");
 				pergunta2.setQuantTentativas(3);
+				pergunta2.setMiniJogo(miniJogo1);
 				perguntaDAO.save(pergunta2);
 				
 				//Política(o)
 				Pergunta pergunta3 = new Pergunta();
 				pergunta3.setDescricao("Sou responsável por defender os interesses da população, quem eu sou?");
 				pergunta3.setQuantTentativas(3);
+				pergunta3.setMiniJogo(miniJogo1);
 				perguntaDAO.save(pergunta3);
 				
 				//Arquiteto(a)
 				Pergunta pergunta4 = new Pergunta();
 				pergunta4.setDescricao("Eu gosto de planejar casas e prédios, quem eu sou?");
 				pergunta4.setQuantTentativas(3);
+				pergunta4.setMiniJogo(miniJogo1);
 				perguntaDAO.save(pergunta4);
 				
 				//Babá
 				Pergunta pergunta5 = new Pergunta();
 				pergunta5.setDescricao("Eu gosto muito de trabalhar com crianças, quem eu sou?");
 				pergunta5.setQuantTentativas(3);
+				pergunta5.setMiniJogo(miniJogo1);
 				perguntaDAO.save(pergunta5);
 				
 				//Entregadora(o)
 				Pergunta pergunta6 = new Pergunta();
 				pergunta6.setDescricao("Meu dever é fazer com que as pessoas recebam suas encomendas, quem eu sou?");
 				pergunta6.setQuantTentativas(3);
+				pergunta6.setMiniJogo(miniJogo1);
 				perguntaDAO.save(pergunta6);
 				
 				//Cientista
 				Pergunta pergunta7 = new Pergunta();
 				pergunta7.setDescricao("Eu adoro pesquisar e descobrir coisas novas, quem eu sou?");
 				pergunta7.setQuantTentativas(3);
+				pergunta7.setMiniJogo(miniJogo1);
 				perguntaDAO.save(pergunta7);
 				
 				//Piloto/Pilota
 				Pergunta pergunta8 = new Pergunta();
 				pergunta8.setDescricao("Eu gosto de velocidade e de adrenalina, quem eu sou?");
 				pergunta8.setQuantTentativas(3);
+				pergunta8.setMiniJogo(miniJogo1);
 				perguntaDAO.save(pergunta8);
 				
 				//Manicure
 				Pergunta pergunta9 = new Pergunta();
 				pergunta9.setDescricao("Eu gosto de cuidar das unhas das pessoas, quem eu sou?");
 				pergunta9.setQuantTentativas(3);
+				pergunta9.setMiniJogo(miniJogo1);
 				perguntaDAO.save(pergunta9);
 				
 				//Policial 
 				Pergunta pergunta10 = new Pergunta();
 				pergunta10.setDescricao("Meu dever é defender a cidade, quem eu sou?");
 				pergunta10.setQuantTentativas(3);
+				pergunta10.setMiniJogo(miniJogo1);
 				perguntaDAO.save(pergunta10);
 				
 				
