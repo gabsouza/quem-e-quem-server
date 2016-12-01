@@ -34,17 +34,6 @@ public class Inserir {
 				if(qtdProfissoes != 0){
 				}
 				
-				//Mini Jogos
-				MiniJogo miniJogo1 = new MiniJogo();
-				miniJogo1.setIntroducao("Relacionar os personagens com as profissões");
-				miniJogo1.setNomeMiniJogo("Profissão");
-				miniJogoDAO.save(miniJogo1);
-				
-				MiniJogo miniJogo2 = new MiniJogo();
-				miniJogo2.setIntroducao("Relacionar os personagens com as fantasias");
-				miniJogo2.setNomeMiniJogo("Fantasias");
-				miniJogoDAO.save(miniJogo2);
-				
 				// Profissões
 
 				// Árbitra
@@ -564,13 +553,26 @@ public class Inserir {
 				alternativaDAO.save(alternativa86);
 			
 			
+				// Mini Jogos
 				
-				//Perguntas
+				//Mini Jogos
+				MiniJogo miniJogo1 = new MiniJogo();
+				miniJogo1.setIntroducao("Relacionar os personagens com as profissões");
+				miniJogo1.setNomeMiniJogo("Profissão");
+				miniJogoDAO.save(miniJogo1);
 				
+				MiniJogo miniJogo2 = new MiniJogo();
+				miniJogo2.setIntroducao("Relacionar os personagens com as fantasias");
+				miniJogo2.setNomeMiniJogo("Fantasias");
+				miniJogoDAO.save(miniJogo2);
+				
+//				//Perguntas
+//				
 				//Agricultor(a)
 				Pergunta pergunta1 = new Pergunta();
 				pergunta1.setDescricao("Eu adoro cuidar da terra, quem eu sou?");
 				pergunta1.setQuantTentativas(3);
+				miniJogo1 = (MiniJogo)miniJogoDAO.getById(1);
 				pergunta1.setMiniJogo(miniJogo1);
 				perguntaDAO.save(pergunta1);
 				
@@ -578,6 +580,7 @@ public class Inserir {
 				Pergunta pergunta2 = new Pergunta();
 				pergunta2.setDescricao("Eu adoro trabalhar com plantas, quem eu sou?");
 				pergunta2.setQuantTentativas(3);
+				miniJogo1 = (MiniJogo)miniJogoDAO.getById(1);
 				pergunta2.setMiniJogo(miniJogo1);
 				perguntaDAO.save(pergunta2);
 				
@@ -585,6 +588,7 @@ public class Inserir {
 				Pergunta pergunta3 = new Pergunta();
 				pergunta3.setDescricao("Sou responsável por defender os interesses da população, quem eu sou?");
 				pergunta3.setQuantTentativas(3);
+				miniJogo1 = (MiniJogo)miniJogoDAO.getById(1);
 				pergunta3.setMiniJogo(miniJogo1);
 				perguntaDAO.save(pergunta3);
 				
@@ -592,6 +596,7 @@ public class Inserir {
 				Pergunta pergunta4 = new Pergunta();
 				pergunta4.setDescricao("Eu gosto de planejar casas e prédios, quem eu sou?");
 				pergunta4.setQuantTentativas(3);
+				miniJogo1 = (MiniJogo)miniJogoDAO.getById(1);
 				pergunta4.setMiniJogo(miniJogo1);
 				perguntaDAO.save(pergunta4);
 				
@@ -599,6 +604,7 @@ public class Inserir {
 				Pergunta pergunta5 = new Pergunta();
 				pergunta5.setDescricao("Eu gosto muito de trabalhar com crianças, quem eu sou?");
 				pergunta5.setQuantTentativas(3);
+				miniJogo1 = (MiniJogo)miniJogoDAO.getById(1);
 				pergunta5.setMiniJogo(miniJogo1);
 				perguntaDAO.save(pergunta5);
 				
@@ -614,6 +620,7 @@ public class Inserir {
 				Pergunta pergunta7 = new Pergunta();
 				pergunta7.setDescricao("Eu adoro pesquisar e descobrir coisas novas, quem eu sou?");
 				pergunta7.setQuantTentativas(3);
+				miniJogo1 = (MiniJogo)miniJogoDAO.getById(1);
 				pergunta7.setMiniJogo(miniJogo1);
 				perguntaDAO.save(pergunta7);
 				
@@ -621,6 +628,7 @@ public class Inserir {
 				Pergunta pergunta8 = new Pergunta();
 				pergunta8.setDescricao("Eu gosto de velocidade e de adrenalina, quem eu sou?");
 				pergunta8.setQuantTentativas(3);
+				miniJogo1 = (MiniJogo)miniJogoDAO.getById(1);
 				pergunta8.setMiniJogo(miniJogo1);
 				perguntaDAO.save(pergunta8);
 				
@@ -628,6 +636,7 @@ public class Inserir {
 				Pergunta pergunta9 = new Pergunta();
 				pergunta9.setDescricao("Eu gosto de cuidar das unhas das pessoas, quem eu sou?");
 				pergunta9.setQuantTentativas(3);
+				miniJogo1 = (MiniJogo)miniJogoDAO.getById(1);
 				pergunta9.setMiniJogo(miniJogo1);
 				perguntaDAO.save(pergunta9);
 				
@@ -635,6 +644,7 @@ public class Inserir {
 				Pergunta pergunta10 = new Pergunta();
 				pergunta10.setDescricao("Meu dever é defender a cidade, quem eu sou?");
 				pergunta10.setQuantTentativas(3);
+				miniJogo1 = (MiniJogo)miniJogoDAO.getById(1);
 				pergunta10.setMiniJogo(miniJogo1);
 				perguntaDAO.save(pergunta10);
 				
@@ -727,55 +737,55 @@ public class Inserir {
 				
 				//Dica Floriculturista
 				Dica dica2 = new Dica();
-				midia2 = (Midia)midiaDAO.getById(1);
+				midia2 = (Midia)midiaDAO.getById(2);
 				dica2.setMidia(midia2);
 				dicaDAO.save(dica2);
 
 				//Dica política(o)
 				Dica dica3 = new Dica();
-				midia3 = (Midia)midiaDAO.getById(1);
+				midia3 = (Midia)midiaDAO.getById(3);
 				dica3.setMidia(midia3);
 				dicaDAO.save(dica3);
 				
 				//Dica arquiteta(o)
 				Dica dica4 = new Dica();
-				midia4 = (Midia)midiaDAO.getById(1);
+				midia4 = (Midia)midiaDAO.getById(4);
 				dica4.setMidia(midia4);
 				dicaDAO.save(dica4);
 				
 				//Dica babá
 				Dica dica5 = new Dica();
-				midia5 = (Midia)midiaDAO.getById(1);
+				midia5 = (Midia)midiaDAO.getById(5);
 				dica5.setMidia(midia5);
 				dicaDAO.save(dica5);
 				
 				//Dica entregador(a)
 				Dica dica6 = new Dica();
-				midia6 = (Midia)midiaDAO.getById(1);
+				midia6 = (Midia)midiaDAO.getById(6);
 				dica6.setMidia(midia6);
 				dicaDAO.save(dica6);
 				
 				//Dica cientista
 				Dica dica7 = new Dica();
-				midia7 = (Midia)midiaDAO.getById(1);
+				midia7 = (Midia)midiaDAO.getById(7);
 				dica7.setMidia(midia7);
 				dicaDAO.save(dica7);
 				
 				//Dica pilota(o)
 				Dica dica8 = new Dica();
-				midia8 = (Midia)midiaDAO.getById(1);
+				midia8 = (Midia)midiaDAO.getById(8);
 				dica8.setMidia(midia8);
 				dicaDAO.save(dica8);
 				
 				//Dica manicure
 				Dica dica9 = new Dica();
-				midia9 = (Midia)midiaDAO.getById(1);
+				midia9 = (Midia)midiaDAO.getById(9);
 				dica9.setMidia(midia9);
 				dicaDAO.save(dica9);
 				
 				//Dica policial
 				Dica dica10 = new Dica();
-				midia10 = (Midia)midiaDAO.getById(1);
+				midia10 = (Midia)midiaDAO.getById(10);
 				dica10.setMidia(midia10);
 				dicaDAO.save(dica10);
 				
