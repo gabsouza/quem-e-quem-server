@@ -18,6 +18,7 @@ import br.com.daos.MiniJogoDAO;
 import br.com.daos.SimpleEntityManager;
 import br.com.pojos.MiniJogo;
 
+@Path("/miniJogo")
 public class MiniJogoService {
 
 	SimpleEntityManager sem = SimpleEntityManager.getInstance();
