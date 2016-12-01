@@ -38,10 +38,12 @@ public class Inserir {
 				MiniJogo miniJogo1 = new MiniJogo();
 				miniJogo1.setIntroducao("Relacionar os personagens com as profissões");
 				miniJogo1.setNomeMiniJogo("Profissão");
+				miniJogoDAO.save(miniJogo1);
 				
 				MiniJogo miniJogo2 = new MiniJogo();
 				miniJogo2.setIntroducao("Relacionar os personagens com as fantasias");
 				miniJogo2.setNomeMiniJogo("Fantasias");
+				miniJogoDAO.save(miniJogo2);
 				
 				// Profissões
 
@@ -604,6 +606,7 @@ public class Inserir {
 				Pergunta pergunta6 = new Pergunta();
 				pergunta6.setDescricao("Meu dever é fazer com que as pessoas recebam suas encomendas, quem eu sou?");
 				pergunta6.setQuantTentativas(3);
+				miniJogo1 = (MiniJogo)miniJogoDAO.getById(1);
 				pergunta6.setMiniJogo(miniJogo1);
 				perguntaDAO.save(pergunta6);
 				
@@ -768,7 +771,7 @@ public class Inserir {
 				Dica dica9 = new Dica();
 				midia9 = (Midia)midiaDAO.getById(1);
 				dica9.setMidia(midia9);
-				dicaDAO.save(dica1);
+				dicaDAO.save(dica9);
 				
 				//Dica policial
 				Dica dica10 = new Dica();
