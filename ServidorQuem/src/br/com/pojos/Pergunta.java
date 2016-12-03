@@ -16,6 +16,9 @@ import javax.persistence.OneToMany;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
+
+import org.codehaus.jackson.annotate.JsonIgnore;
 
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -43,9 +46,11 @@ public class Pergunta implements Serializable{
 	//@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, targetEntity = Alternativa.class)
 	//private List<Alternativa> alternativas = new ArrayList<Alternativa>();
 	
+	
 	@OneToMany(mappedBy = "pergunta", targetEntity = Dica.class,cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private List<Dica> dicas = new ArrayList<Dica>();
-	
+
+	@XmlTransient
 	@ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.LAZY, targetEntity = MiniJogo.class)
 	private MiniJogo miniJogo;
 	

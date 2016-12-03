@@ -573,7 +573,6 @@ public class Inserir {
 				pergunta1.setDescricao("Eu adoro cuidar da terra, quem eu sou?");
 				pergunta1.setQuantTentativas(3);
 				miniJogo1 = (MiniJogo)miniJogoDAO.getById(1);
-				pergunta1.setMiniJogo(miniJogo1);
 				perguntaDAO.save(pergunta1);
 				
 				//Floriculturista
