@@ -13,12 +13,14 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 
-import br.com.pojos.StatusAlternativa;
+import br.com.pojos.GeneroPersonagem;
 
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -29,17 +31,19 @@ public class Alternativa implements Serializable{
 
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idAlternativa; 
-	@Enumerated(EnumType.STRING)
-	private StatusAlternativa statusAlternativa;
 	@Column(nullable = false, length = 50)
 	private String descricao;
 	
-	@OneToMany(mappedBy = "alternativa", cascade = CascadeType.MERGE, fetch = FetchType.LAZY, targetEntity = Resposta.class)
-	private List<Resposta> respostas = new ArrayList<Resposta>();
+	@Enumerated(EnumType.STRING)
+	private GeneroPersonagem generoPersonagem;
+	
+	@ManyToOne(targetEntity = Pergunta.class, fetch = FetchType.EAGER, cascade = {CascadeType.REFRESH})
+	@JoinColumn(name = "id_pergunta")
+	private Pergunta pergunta;
 		
-	public Alternativa(StatusAlternativa statusAlternativa, String descricao){
-		this.statusAlternativa = statusAlternativa;
+	public Alternativa(String descricao, GeneroPersonagem generoPersonagem){
 		this.descricao = descricao;
+		this.generoPersonagem = generoPersonagem;
 	}
 	
 	public Alternativa(){
@@ -54,14 +58,6 @@ public class Alternativa implements Serializable{
 		this.idAlternativa = idAlternativa;
 	}
 
-	public StatusAlternativa getStatusAlternativa() {
-		return statusAlternativa;
-	}
-
-	public void setStatusAlternativa(StatusAlternativa statusAlternativa) {
-		this.statusAlternativa = statusAlternativa;
-	}
-
 	public String getDescricao() {
 		return descricao;
 	}
@@ -70,13 +66,25 @@ public class Alternativa implements Serializable{
 		this.descricao = descricao;
 	}
 
-	public List<Resposta> getRespostas() {
-		return respostas;
+	public GeneroPersonagem getGeneroPersonagem() {
+		return generoPersonagem;
 	}
 
-	public void setRespostas(List<Resposta> respostas) {
-		this.respostas = respostas;
+	public void setGeneroPersonagem(GeneroPersonagem generoPersonagem) {
+		this.generoPersonagem = generoPersonagem;
 	}
+
+	public Pergunta getPergunta() {
+		return pergunta;
+	}
+
+	public void setPergunta(Pergunta pergunta) {
+		this.pergunta = pergunta;
+	}
+
+
+	
+	
 	
 	
 	
