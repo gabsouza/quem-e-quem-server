@@ -30,7 +30,6 @@ public class Inserir {
 
 			Integer qtdProfissoes = alternativaDAO.consultaQuantidadeProfissoes();
 
-			if (qtdProfissoes != 0) {
 
 			// Profissões
 
@@ -549,7 +548,6 @@ public class Inserir {
 			alternativa86.setDescricao("Estilista");
 			alternativa86.setStatusAlternativa(StatusAlternativa.ERRADA);
 			alternativaDAO.save(alternativa86);
-			}
 
 			// Mini Jogos
 
