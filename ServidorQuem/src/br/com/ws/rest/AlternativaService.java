@@ -19,7 +19,7 @@ import javax.ws.rs.core.Response;
 import br.com.pojos.Alternativa;
 import br.com.daos.AlternativaDAO;
 import br.com.daos.SimpleEntityManager;
-import br.com.pojos.StatusAlternativa;
+import br.com.pojos.GeneroPersonagem;
 
 @Path("/alternativa")
 public class AlternativaService {

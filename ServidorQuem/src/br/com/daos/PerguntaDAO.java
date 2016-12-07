@@ -40,6 +40,18 @@ public class PerguntaDAO extends GenericDAO<Integer, Pergunta>{
 		return perguntaId;
 		}
 	
+	public List<Pergunta> listarPerguntasPorIdMiniJogo(int idMiniJogo){
+		List<Pergunta> perguntas = new ArrayList<Pergunta>();
+		try{
+			Query consulta = this.em.createQuery("Select perg from Pergunta perg where perg.miniJogo.idMiniJogo = :id");
+			consulta.setParameter("id", idMiniJogo);
+			perguntas = consulta.getResultList();
+		} catch (Exception e){
+			System.out.println(e.getMessage());
+		}
+		return perguntas;
+		}
+	
 	// Retorna perguntas com determinadas letras	
 	public List<Pergunta> listAllPerguntasPorNome(){
 		List<Pergunta> perguntasPorNome = new ArrayList<Pergunta>();
