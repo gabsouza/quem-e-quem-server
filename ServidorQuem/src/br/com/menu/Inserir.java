@@ -22,7 +22,6 @@ import br.com.pojos.TipoMidia;
 
 public class Inserir {
 
-
 		public static void inserir(SimpleEntityManager s, AlternativaDAO alternativaDAO, DicaDAO dicaDAO,
 							MidiaDAO midiaDAO, MiniJogoDAO miniJogoDAO, PerguntaDAO perguntaDAO, 
 							RelatorioDAO relatorioDAO, RespostaDAO respostaDAO, SeloDAO seloDAO,
