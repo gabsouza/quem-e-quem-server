@@ -43,8 +43,8 @@ public class Pergunta implements Serializable{
 //	@OneToMany(mappedBy = "pergunta", targetEntity = Resposta.class, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 //	private List<Resposta> respostas = new ArrayList<Resposta>();
 	
-	//@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, targetEntity = Alternativa.class)
-	//private List<Alternativa> alternativas = new ArrayList<Alternativa>();
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, targetEntity = Alternativa.class)
+	private List<Alternativa> alternativas = new ArrayList<Alternativa>();
 	
 	
 	@OneToMany(mappedBy = "pergunta", targetEntity = Dica.class,cascade = CascadeType.ALL, fetch = FetchType.LAZY)
@@ -109,6 +109,14 @@ public class Pergunta implements Serializable{
 
 	public void setMiniJogo(MiniJogo miniJogo) {
 		this.miniJogo = miniJogo;
+	}
+
+	public List<Alternativa> getAlternativas() {
+		return alternativas;
+	}
+
+	public void setAlternativas(List<Alternativa> alternativas) {
+		this.alternativas = alternativas;
 	}
 	
 }

@@ -19,6 +19,7 @@ import javax.persistence.OneToMany;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 import br.com.pojos.GeneroPersonagem;
 
@@ -37,6 +38,7 @@ public class Alternativa implements Serializable{
 	@Enumerated(EnumType.STRING)
 	private GeneroPersonagem generoPersonagem;
 	
+	@XmlTransient
 	@ManyToOne(targetEntity = Pergunta.class, fetch = FetchType.EAGER, cascade = {CascadeType.REFRESH})
 	@JoinColumn(name = "id_pergunta")
 	private Pergunta pergunta;

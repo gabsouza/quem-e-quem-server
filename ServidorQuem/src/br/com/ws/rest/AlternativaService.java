@@ -20,6 +20,7 @@ import br.com.pojos.Alternativa;
 import br.com.daos.AlternativaDAO;
 import br.com.daos.SimpleEntityManager;
 import br.com.pojos.GeneroPersonagem;
+import br.com.pojos.Pergunta;
 
 @Path("/alternativa")
 public class AlternativaService {
@@ -45,11 +46,12 @@ public class AlternativaService {
 		}
 		
 		@GET
+		@Path("/pergunta/{idPergunta}")
 		@Produces(MediaType.APPLICATION_JSON)
-		public List<Alternativa> listar(){
+		public List<Alternativa> listarAlternativasPorIdPergunta(@PathParam("idPergunta")int idPergunta){
 			int exceptionNumber = 500;
 			try{
-				List<Alternativa> alternativas = alternativaDAO.listAllAlternativas();
+				List<Alternativa> alternativas = alternativaDAO.listarAlternativasPorIdPergunta(idPergunta);
 				if (alternativas.isEmpty()) {
 						exceptionNumber = 404;
 						throw new Exception("No alternativas registred");
@@ -59,6 +61,22 @@ public class AlternativaService {
 				throw new WebApplicationException(exceptionNumber);
 			}
 		}
+		
+//		@GET
+//		@Produces(MediaType.APPLICATION_JSON)
+//		public List<Alternativa> listar(){
+//			int exceptionNumber = 500;
+//			try{
+//				List<Alternativa> alternativas = alternativaDAO.listAllAlternativas();
+//				if (alternativas.isEmpty()) {
+//						exceptionNumber = 404;
+//						throw new Exception("No alternativas registred");
+//					}
+//				return alternativas;
+//			} catch (Exception e){
+//				throw new WebApplicationException(exceptionNumber);
+//			}
+//		}
 		
 	
 		//NÃO PRECISAREI
