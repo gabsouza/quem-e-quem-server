@@ -27,12 +27,12 @@ public class ApplicationConfig extends Application {
 		resources.add(HelloWorld.class);
 		resources.add(TransporteService.class);
 		resources.add(ClienteService.class);
-		resources.add(Alternativa.class);
+		resources.add(AlternativaService.class);
 		resources.add(Dica.class);
 		resources.add(MidiaService.class);
 		resources.add(MiniJogoService.class);
 		resources.add(PerfilService.class);
-		resources.add(Pergunta.class);
+		resources.add(PerguntaService.class);
 		resources.add(RelatorioService.class);
 		resources.add(ResponsavelService.class);
 		resources.add(Resposta.class);
