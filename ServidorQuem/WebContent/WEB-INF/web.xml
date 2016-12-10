@@ -16,6 +16,6 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>Exemplo de WebServices em Rest</servlet-name>
-    <url-pattern>/rest/</url-pattern>
+    <url-pattern>/rest/*</url-pattern>
   </servlet-mapping>
 </web-app>
