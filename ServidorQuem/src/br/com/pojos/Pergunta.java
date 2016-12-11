@@ -29,11 +29,14 @@ public class Pergunta implements Serializable{
 
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idPergunta;
+	
 	@Column(nullable = false)
 	private int quantTentativas;
+	
 	//@Column(nullable = false)
 	private String descricao;
 	
+	@XmlTransient
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, targetEntity = Midia.class)
 	private List<Midia> midias = new ArrayList<Midia>();
 	
@@ -43,10 +46,11 @@ public class Pergunta implements Serializable{
 //	@OneToMany(mappedBy = "pergunta", targetEntity = Resposta.class, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 //	private List<Resposta> respostas = new ArrayList<Resposta>();
 	
+	@XmlTransient
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, targetEntity = Alternativa.class)
 	private List<Alternativa> alternativas = new ArrayList<Alternativa>();
 	
-	
+	@XmlTransient
 	@OneToMany(mappedBy = "pergunta", targetEntity = Dica.class,cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private List<Dica> dicas = new ArrayList<Dica>();
 
