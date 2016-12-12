@@ -26,9 +26,9 @@ public class MiniJogo implements Serializable {
 	
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idMiniJogo;
-	@Column(nullable = false, length = 20)
+	@Column(nullable = false, length = 50)
 	private String nomeMiniJogo;
-	@Column(nullable = false, length = 100)
+	@Column(nullable = false, length = 200)
 	private String introducao;
 	
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, targetEntity = Midia.class)
