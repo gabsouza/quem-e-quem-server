@@ -28,58 +28,5 @@ public class Menu {
 		UsuarioMiniJogoDAO usuarioMiniJogoDAO = new UsuarioMiniJogoDAO(sem.getEntityManager());
 		
 		Inserir.inserir(sem, alternativaDAO, dicaDAO, midiaDAO, miniJogoDAO, perguntaDAO, relatorioDAO, respostaDAO, seloDAO, usuarioMiniJogoDAO);
-		
-//		try{
-//			sem.beginTransaction();
-//			List<Cliente> clientes = clienteDAO.listAllClientes();
-//			Cliente clientesId = clienteDAO.listClientePorId();
-//			List<Cliente> clientesPorNome = clienteDAO.listAllClientesPorNome();
-//			List<Locacao> locacoes = locacaoDAO.listAllLocacoes();
-//			sem.commit();
-//			
-//			for(Cliente cliente : clientes){
-//				System.out.println(cliente.getMatricula());
-//				System.out.println(cliente.getNome());
-//				System.out.println(cliente.getCpf());
-//				System.out.println(cliente.getDataCadastro());
-//				System.out.println(cliente.getNascimento());
-//				System.out.println(cliente.getStatus());
-//				
-//				// Colocando contato:
-//				for(Contato c : cliente.getContatos()){
-//					System.out.println(c.getIdContato() + " , " +  c.getTipo() + " , " + c.getInfo() + " "  );
-//				}
-//				// Como endereco é um array, devemos colocar assim:
-//				for(Endereco e : cliente.getEnderecos()){
-//					System.out.println(e.getRua() + " - " + e.getNumero() + " , " + e.getBairro() + " , " + e.getCidade() + 
-//										" , " + e.getEstado() + " , " + e.getCep());
-//				}
-//				for(Locacao locacao : locacoes){
-//					System.out.println(locacao.getTipo());
-//					System.out.println(locacao.getTitulo());
-//					System.out.println(locacao.getClassificacao());
-//					System.out.println(locacao.getDataentrega());
-//					System.out.println(locacao.getDatasaida());
-//					System.out.println(locacao.getGenero());
-//					System.out.println(locacao.getPreco());
-//				}
-//			
-//			System.out.println(clientesId.getNome());
-//			
-//			
-//			for(Cliente cliente : clientesPorNome){
-//				System.out.println(cliente.getMatricula());
-//				System.out.println(cliente.getNome());
-//				System.out.println(cliente.getCpf());
-//				System.out.println(cliente.getDataCadastro());
-//				System.out.println(cliente.getNascimento());
-//				System.out.println(cliente.getStatus());
-//				System.out.println("-----------------");
-//			}
-//		} catch (Exception e){
-//			System.out.println("Ocorreu um erro: " + e.getMessage());
-//		} finally {
-//			sem.close();
-//		}
-	}	
+	}
 }
