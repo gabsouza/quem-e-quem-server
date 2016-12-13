@@ -57,21 +57,23 @@ public class AlternativaService {
 			}
 		}
 		
-//		@GET
-//		@Produces(MediaType.APPLICATION_JSON)
-//		public List<Alternativa> listar(){
-//			int exceptionNumber = 500;
-//			try{
-//				List<Alternativa> alternativas = alternativaDAO.listAllAlternativas();
-//				if (alternativas.isEmpty()) {
-//						exceptionNumber = 404;
-//						throw new Exception("No alternativas registred");
-//					}
-//				return alternativas;
-//			} catch (Exception e){
-//				throw new WebApplicationException(exceptionNumber);
-//			}
-//		}
+		
+		@GET
+		@Path("/alternativas")
+		@Produces(MediaType.APPLICATION_JSON)
+		public List<Alternativa> listar(){
+			int exceptionNumber = 500;
+			try{
+				List<Alternativa> alternativas = alternativaDAO.listAllAlternativas();
+				if (alternativas.isEmpty()) {
+						exceptionNumber = 404;
+						throw new Exception("No alternativas registred");
+					}
+				return alternativas;
+			} catch (Exception e){
+				throw new WebApplicationException(exceptionNumber);
+			}
+		}
 		
 	
 		//NÃO PRECISAREI
