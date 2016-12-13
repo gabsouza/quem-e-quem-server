@@ -7,8 +7,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
 import br.com.pojos.Alternativa;
-import br.com.pojos.Dica;
-import br.com.pojos.Pergunta;
 
 public class AlternativaDAO extends GenericDAO<Integer, Alternativa> {
 
@@ -41,21 +39,21 @@ public class AlternativaDAO extends GenericDAO<Integer, Alternativa> {
 		return alternativaId;
 	}
 
-	public List<Alternativa> listarAlternativasPorIdPergunta(int idPergunta){
+	public List<Alternativa> listarAlternativasPorIdPergunta(int idPergunta) {
 		List<Alternativa> alternativas = new ArrayList<Alternativa>();
-		try{
+		try {
 			Query consulta = this.em.createQuery("Select a from Alternativa a where a.pergunta.idPergunta = :id");
 			consulta.setParameter("id", idPergunta);
 			alternativas = consulta.getResultList();
-		} catch (Exception e){
+		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
 		return alternativas;
-		}
-	
+	}
+
 	public Integer consultaQuantidadeProfissoes() {
 		Integer quantidadeProfissoes = 0;
-		
+
 		try {
 			Query consultaQuantidadeProfissoes = this.em
 					.createQuery("Select count(a.idAlternativa) from Alternativa a");
