@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
+import javax.ws.rs.PathParam;
 
 import br.com.pojos.Alternativa;
 
@@ -51,6 +52,20 @@ public class AlternativaDAO extends GenericDAO<Integer, Alternativa> {
 		return alternativas;
 	}
 
+	public List<Alternativa> buscarAlternativasIncorretas(int idAlternativa1, int idAlternativa2, int numeroDeAlternativas) {
+		List<Alternativa> alternativas = new ArrayList<Alternativa>();
+		try {
+			Query consulta = this.em.createQuery("Select a from Alternativa a where a.pergunta.idPergunta != :id1 and a.pergunta.idPergunta != :id2");
+			consulta.setParameter("id1", idAlternativa1);
+			consulta.setParameter("id2", idAlternativa2);
+			consulta.setMaxResults(numeroDeAlternativas);
+			alternativas = consulta.getResultList();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return alternativas;
+	}
+	
 	public Integer consultaQuantidadeProfissoes() {
 		Integer quantidadeProfissoes = 0;
 
