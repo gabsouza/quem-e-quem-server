@@ -29,12 +29,11 @@ public class Inserir {
 			try{
 				s.beginTransaction();
 				
-				Integer qtdProfissoes = alternativaDAO.consultaQuantidadeProfissoes();		
+				//Integer qtdProfissoes = alternativaDAO.consultaQuantidadeProfissoes();		
 				
-				if(qtdProfissoes != 0){
-				
-				}
-// Mini Jogos
+//				if(qtdProfissoes != 0){
+//				
+//				}
 				
 				//Mini Jogos
 				MiniJogo miniJogo1 = new MiniJogo();
@@ -751,8 +750,7 @@ public class Inserir {
 				midia10.setTipoMidia(TipoMidia.FIGURA);
 				midiaDAO.save(midia10);
 				
-				
-				
+								
 				
 				//Dicas
 				

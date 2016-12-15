@@ -5,9 +5,9 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
-import javax.ws.rs.PathParam;
 
 import br.com.pojos.Alternativa;
+import br.com.pojos.GeneroPersonagem;
 
 public class AlternativaDAO extends GenericDAO<Integer, Alternativa> {
 
@@ -52,10 +52,12 @@ public class AlternativaDAO extends GenericDAO<Integer, Alternativa> {
 		return alternativas;
 	}
 
-	public List<Alternativa> buscarAlternativasIncorretas(int idAlternativa1, int idAlternativa2, int numeroDeAlternativas) {
+	public List<Alternativa> buscarAlternativasIncorretas(int idAlternativa1, int idAlternativa2,
+			int numeroDeAlternativas) {
 		List<Alternativa> alternativas = new ArrayList<Alternativa>();
 		try {
-			Query consulta = this.em.createQuery("Select a from Alternativa a where a.pergunta.idPergunta != :id1 and a.pergunta.idPergunta != :id2");
+			Query consulta = this.em.createQuery(
+					"Select a from Alternativa a where a.pergunta.idPergunta != :id1 and a.pergunta.idPergunta != :id2");
 			consulta.setParameter("id1", idAlternativa1);
 			consulta.setParameter("id2", idAlternativa2);
 			consulta.setMaxResults(numeroDeAlternativas);
@@ -65,21 +67,39 @@ public class AlternativaDAO extends GenericDAO<Integer, Alternativa> {
 		}
 		return alternativas;
 	}
-	
-	public Integer consultaQuantidadeProfissoes() {
-		Integer quantidadeProfissoes = 0;
 
+	// Tentativa
+	public List<Alternativa> buscarAlternativasIncorretasFemininas(int idAlternativa1, int idAlternativa2,
+			Enum generoPersonagem, int numeroDeAlternativas) {
+		List<Alternativa> alternativas = new ArrayList<Alternativa>();
 		try {
-			Query consultaQuantidadeProfissoes = this.em
-					.createQuery("Select count(a.idAlternativa) from Alternativa a");
-			quantidadeProfissoes = (Integer) consultaQuantidadeProfissoes.getSingleResult();
-
+			Query consulta = this.em.createQuery(
+					"Select a from Alternativa a where a.pergunta.idPergunta != :id1 and a.pergunta.idPergunta != :id2 and a.generoPersonagem = :generoPersonagem");
+			consulta.setParameter("id1", idAlternativa1);
+			consulta.setParameter("id2", idAlternativa2);
+			consulta.setParameter("generoPersonagem", GeneroPersonagem.FEMININO);
+			consulta.setMaxResults(numeroDeAlternativas);
+			alternativas = consulta.getResultList();
 		} catch (Exception e) {
-			System.out.println("Ocorreu um erro: " + e.getMessage());
+			System.out.println(e.getMessage());
 		}
-
-		return quantidadeProfissoes;
+		return alternativas;
 	}
+
+//	public Integer consultaQuantidadeProfissoes() {
+//		Integer quantidadeProfissoes = 0;
+//
+//		try {
+//			Query consultaQuantidadeProfissoes = this.em
+//					.createQuery("Select count(a.idAlternativa) from Alternativa a");
+//			quantidadeProfissoes = (Integer) consultaQuantidadeProfissoes.getSingleResult();
+//
+//		} catch (Exception e) {
+//			System.out.println("Ocorreu um erro: " + e.getMessage());
+//		}
+//
+//		return quantidadeProfissoes;
+//	}
 
 	// Retorna altenativas com determinadas letras
 	public List<Alternativa> listAllAlternativasPorNome() {
