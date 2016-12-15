@@ -28,13 +28,7 @@ public class Inserir {
 							UsuarioMiniJogoDAO usuarioMiniJogoDAO){
 			try{
 				s.beginTransaction();
-				
-				//Integer qtdProfissoes = alternativaDAO.consultaQuantidadeProfissoes();		
-				
-//				if(qtdProfissoes != 0){
-//				
-//				}
-				
+					
 				//Mini Jogos
 				MiniJogo miniJogo1 = new MiniJogo();
 				miniJogo1.setIntroducao("Relacionar os personagens com as profissões");
@@ -206,7 +200,7 @@ public class Inserir {
 				alternativa12.setGeneroPersonagem(GeneroPersonagem.MASCULINO);
 				alternativaDAO.save(alternativa12);
 
-				// Prisidenta
+				// Político
 				Alternativa alternativa13 = new Alternativa();
 				alternativa13.setDescricao("Político");
 				pergunta3 = (Pergunta)perguntaDAO.getById(3);
@@ -214,9 +208,9 @@ public class Inserir {
 				alternativa13.setGeneroPersonagem(GeneroPersonagem.FEMININO);
 				alternativaDAO.save(alternativa13);
 
-				// Presidente
+				// Política
 				Alternativa alternativa14 = new Alternativa();
-				alternativa14.setDescricao("Político");
+				alternativa14.setDescricao("Política");
 				pergunta3 = (Pergunta)perguntaDAO.getById(3);
 				alternativa14.setPergunta(pergunta3);
 				alternativa14.setGeneroPersonagem(GeneroPersonagem.MASCULINO);
