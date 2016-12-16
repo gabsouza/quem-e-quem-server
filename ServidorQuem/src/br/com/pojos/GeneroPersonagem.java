@@ -1,5 +1,8 @@
 package br.com.pojos;
 
+import javax.xml.bind.annotation.XmlEnum;
+
+@XmlEnum(String.class)
 public enum GeneroPersonagem {
 	
 	FEMININO("Feminino"),
