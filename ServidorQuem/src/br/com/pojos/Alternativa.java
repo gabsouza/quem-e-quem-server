@@ -1,8 +1,6 @@
 package br.com.pojos;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -15,13 +13,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
-
-import br.com.pojos.GeneroPersonagem;
 
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -38,7 +33,7 @@ public class Alternativa implements Serializable{
 	@Enumerated(EnumType.STRING)
 	private GeneroPersonagem generoPersonagem;
 	
-	@XmlTransient
+	@XmlElementWrapper
 	@ManyToOne(targetEntity = Pergunta.class, fetch = FetchType.EAGER, cascade = {CascadeType.REFRESH})
 	@JoinColumn(name = "id_pergunta")
 	private Pergunta pergunta;
