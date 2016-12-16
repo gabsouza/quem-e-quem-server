@@ -96,6 +96,26 @@ public class AlternativaService {
 //	 	} catch (Exception e) {
 //	 		throw new WebApplicationException(exceptionNumber);
 //	 	}
+
+	
+//	 public List<Alternativa>
+//	 buscarAlternativasIncorretasFemininas(@PathParam("idAlternativa1") int
+//	 idAlternativa1, @PathParam("idAlternativa2") int idAlternativa2,
+//	 @PathParam("generoPersonagem") Enum generoPersonagem,
+//	 @PathParam("numeroDeAlternativas") int numeroDeAlternativas) {
+//	 int exceptionNumber = 500;
+//	 try {
+//	 List<Alternativa> alternativas =
+//	 alternativaDAO.buscarAlternativasIncorretasFemininas(idAlternativa1,
+//	 idAlternativa2, generoPersonagem, numeroDeAlternativas);
+//	 if (alternativas.isEmpty()) {
+//	 exceptionNumber = 404;
+//	 throw new Exception("No alternativas registred");
+//	 }
+//	 return alternativas;
+//	 } catch (Exception e) {
+//	 throw new WebApplicationException(exceptionNumber);
+//	 }
 //	 }
 
 	@GET
