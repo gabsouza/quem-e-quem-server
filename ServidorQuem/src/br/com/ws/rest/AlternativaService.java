@@ -79,6 +79,25 @@ public class AlternativaService {
 //	 @GET
 //	 @Path("/{idAlternativa1}/{idAlternativa2}/{numeroDeAlternativas}/{generoPersonagem}")
 //	 @Produces(MediaType.APPLICATION_JSON)
+//	 public List<Alternativa> buscarAlternativasIncorretasFemininas(@PathParam("idAlternativa1") int
+//	 idAlternativa1, @PathParam("idAlternativa2") int idAlternativa2,
+//	 @PathParam("numeroDeAlternativas") int numeroDeAlternativas, 
+//	 @PathParam("generoPersonagem") String generoPersonagem) {
+//	 int exceptionNumber = 500;
+//	 	try {
+//	 		List<Alternativa> alternativas = alternativaDAO.buscarAlternativasIncorretas(idAlternativa1,
+//	 				idAlternativa2, numeroDeAlternativas, generoPersonagem);
+//	 			if (alternativas.isEmpty()) {
+//	 				exceptionNumber = 404;
+//	 				throw new Exception("No alternativas registred");
+//	 			}
+//	 			return alternativas;
+//	 			
+//	 	} catch (Exception e) {
+//	 		throw new WebApplicationException(exceptionNumber);
+//	 	}
+
+	
 //	 public List<Alternativa>
 //	 buscarAlternativasIncorretasFemininas(@PathParam("idAlternativa1") int
 //	 idAlternativa1, @PathParam("idAlternativa2") int idAlternativa2,
