@@ -52,33 +52,15 @@ public class AlternativaDAO extends GenericDAO<Integer, Alternativa> {
 		return alternativas;
 	}
 
-	public List<Alternativa> buscarAlternativasIncorretas(int idAlternativa1, int idAlternativa2,
-			int numeroDeAlternativas) {
-		List<Alternativa> alternativas = new ArrayList<Alternativa>();
-		try {
-			Query consulta = this.em.createQuery(
-					"Select a from Alternativa a where a.pergunta.idPergunta != :id1 and a.pergunta.idPergunta != :id2");
-			consulta.setParameter("id1", idAlternativa1);
-			consulta.setParameter("id2", idAlternativa2);
-			consulta.setMaxResults(numeroDeAlternativas);
-			alternativas = consulta.getResultList();
-		} catch (Exception e) {
-			System.out.println(e.getMessage());
-		}
-		return alternativas;
-	}
-
-	// Tentativa
 //	public List<Alternativa> buscarAlternativasIncorretas(int idAlternativa1, int idAlternativa2,
-//			 int numeroDeAlternativas, String generoPersonagem) {
+//			int numeroDeAlternativas) {
 //		List<Alternativa> alternativas = new ArrayList<Alternativa>();
 //		try {
 //			Query consulta = this.em.createQuery(
-//					"Select a from Alternativa a where a.pergunta.idPergunta != :id1 and a.pergunta.idPergunta != :id2 "
-//					+ "and a.generoPersonagem.code = :generoPersonagem or a.generoPersonagem.code = NEUTRO");
+//					"Select a from Alternativa a where a.pergunta.idPergunta != :id1 and "
+//					+ "a.pergunta.idPergunta != :id2");
 //			consulta.setParameter("id1", idAlternativa1);
 //			consulta.setParameter("id2", idAlternativa2);
-//			consulta.setParameter("generoPersonagem", generoPersonagem);
 //			consulta.setMaxResults(numeroDeAlternativas);
 //			alternativas = consulta.getResultList();
 //		} catch (Exception e) {
@@ -86,6 +68,32 @@ public class AlternativaDAO extends GenericDAO<Integer, Alternativa> {
 //		}
 //		return alternativas;
 //	}
+
+	// Tentativa
+	public List<Alternativa> buscarAlternativasIncorretas(int idAlternativa1, int idAlternativa2,
+			 int numeroDeAlternativas, String generoPersonagem) {
+		List<Alternativa> alternativas = new ArrayList<Alternativa>();
+		try {
+			Query consulta = this.em.createQuery(
+					"Select a from Alternativa a where a.pergunta.idPergunta != :id1 and a.pergunta.idPergunta != :id2 "
+					+ "and a.generoPersonagem = :genPersonagem or a.generoPersonagem = :neutro");
+			consulta.setParameter("id1", idAlternativa1);
+			consulta.setParameter("id2", idAlternativa2);
+			if(generoPersonagem.equalsIgnoreCase("FEMININO")){
+				consulta.setParameter("genPersonagem", GeneroPersonagem.FEMININO);
+			}else{
+				if(generoPersonagem.equalsIgnoreCase("MASCULINO")){
+					consulta.setParameter("genPersonagem", GeneroPersonagem.MASCULINO);
+				}
+			}
+			consulta.setParameter("neutro", GeneroPersonagem.NEUTRO);
+			consulta.setMaxResults(numeroDeAlternativas);
+			alternativas = consulta.getResultList();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return alternativas;
+	}
 
 
 	// Retorna altenativas com determinadas letras
