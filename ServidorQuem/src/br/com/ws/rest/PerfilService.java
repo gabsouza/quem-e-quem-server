@@ -71,18 +71,16 @@ public class PerfilService {
 	}
 	
 	@PUT
-	@Path("/{idPerfil}")
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Response atualizar(@PathParam("id") int id, Perfil perfil){
+	public Response atualizar(Perfil perfil){
 		int exceptionNumber = 500;
 		try{
-			Perfil perfiljput = perfilDAO.getById(id);
+			Perfil perfiljput = perfilDAO.getById(perfil.getIdPerfil());
 			if(perfiljput == null){
 				exceptionNumber = 404;
 				throw new Exception("No perfil with this id");
 			} else {
 				sem.getEntityManager().getTransaction().begin();
-				perfil.setIdPerfil(id);
 				perfilDAO.save(perfil);
 				sem.getEntityManager().getTransaction().commit();
 				return Response.status(200).entity("Perfil alterado com sucesso").build();
