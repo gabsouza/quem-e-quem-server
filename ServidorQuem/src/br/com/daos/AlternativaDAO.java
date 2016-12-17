@@ -7,7 +7,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
 import br.com.pojos.Alternativa;
-import br.com.pojos.GeneroPersonagem;
 
 public class AlternativaDAO extends GenericDAO<Integer, Alternativa> {
 
@@ -69,24 +68,26 @@ public class AlternativaDAO extends GenericDAO<Integer, Alternativa> {
 	}
 
 	// Tentativa
-//	public List<Alternativa> buscarAlternativasIncorretas(int idAlternativa1, int idAlternativa2,
-//			 int numeroDeAlternativas, String generoPersonagem) {
-//		List<Alternativa> alternativas = new ArrayList<Alternativa>();
-//		try {
-//			Query consulta = this.em.createQuery(
-//					"Select a from Alternativa a where a.pergunta.idPergunta != :id1 and a.pergunta.idPergunta != :id2 "
-//					+ "and a.generoPersonagem.code = :generoPersonagem or a.generoPersonagem.code = NEUTRO");
-//			consulta.setParameter("id1", idAlternativa1);
-//			consulta.setParameter("id2", idAlternativa2);
-//			consulta.setParameter("generoPersonagem", generoPersonagem);
-//			consulta.setMaxResults(numeroDeAlternativas);
-//			alternativas = consulta.getResultList();
-//		} catch (Exception e) {
-//			System.out.println(e.getMessage());
-//		}
-//		return alternativas;
-//	}
-
+	// public List<Alternativa> buscarAlternativasIncorretas(int idAlternativa1,
+	// int idAlternativa2,
+	// int numeroDeAlternativas, String generoPersonagem) {
+	// List<Alternativa> alternativas = new ArrayList<Alternativa>();
+	// try {
+	// Query consulta = this.em.createQuery(
+	// "Select a from Alternativa a where a.pergunta.idPergunta != :id1 and
+	// a.pergunta.idPergunta != :id2 "
+	// + "and a.generoPersonagem.code = :generoPersonagem or
+	// a.generoPersonagem.code = NEUTRO");
+	// consulta.setParameter("id1", idAlternativa1);
+	// consulta.setParameter("id2", idAlternativa2);
+	// consulta.setParameter("generoPersonagem", generoPersonagem);
+	// consulta.setMaxResults(numeroDeAlternativas);
+	// alternativas = consulta.getResultList();
+	// } catch (Exception e) {
+	// System.out.println(e.getMessage());
+	// }
+	// return alternativas;
+	// }
 
 	// Retorna altenativas com determinadas letras
 	public List<Alternativa> listAllAlternativasPorNome() {

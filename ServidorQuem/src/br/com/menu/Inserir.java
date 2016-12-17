@@ -494,9 +494,9 @@ public class Inserir {
 				alternativa58.setGeneroPersonagem(GeneroPersonagem.MASCULINO);
 				alternativaDAO.save(alternativa58);
 
-				// Floriculturista
+				// Florista
 				Alternativa alternativa59 = new Alternativa();
-				alternativa59.setDescricao("Floriculturista");
+				alternativa59.setDescricao("Florista");
 				pergunta2 = (Pergunta)perguntaDAO.getById(2);
 				alternativa59.setPergunta(pergunta2);
 				alternativa59.setGeneroPersonagem(GeneroPersonagem.NEUTRO);
